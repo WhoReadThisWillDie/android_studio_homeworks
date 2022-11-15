@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextB;
     private EditText editTextC;
 
-    private TextView textViewX;
+    private TextView textViewX1;
+    private TextView textViewX2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +25,49 @@ public class MainActivity extends AppCompatActivity {
         editTextB = findViewById(R.id.edit_text_b);
         editTextC = findViewById(R.id.edit_text_c);
 
-        textViewX = findViewById(R.id.text_view_x);
+        textViewX1 = findViewById(R.id.text_view_x1);
+        textViewX2 = findViewById(R.id.text_view_x2);
 
-    }
-
-    private double getDoubleValue(EditText editText) {
-        if (editText.getText().toString().isEmpty() || editText.getText().toString().equals("-")) {
-            Toast.makeText(this, "Некорректный ввод",Toast.LENGTH_SHORT).show();
-            return 0;
-        }
-        return Double.parseDouble(editText.getText().toString());
     }
 
     public void click(View view) {
-        double a = getDoubleValue(editTextA);
-        double b = getDoubleValue(editTextB);
-        double c = getDoubleValue(editTextC);
+        textViewX1.setText("");
+        textViewX2.setText("");
+        String textA = editTextA.getText().toString();
+        String textB = editTextB.getText().toString();
+        String textC = editTextC.getText().toString();
 
-        double x = (c - b) / (double) a;
-        textViewX.setText(String.format("%.2f", x));
+        double x1;
+        double x2;
 
-        Toast.makeText(this, x + "", Toast.LENGTH_SHORT).show();
+        if (textA.isEmpty() || textB.isEmpty() || textC.isEmpty() || textA.equals("-") || textB.equals("-"))
+            Toast.makeText(this, "Некорректный ввод", Toast.LENGTH_SHORT).show();
+        else {
+            double a = Double.parseDouble(textA);
+            double b = Double.parseDouble(textB);
+            double c = Double.parseDouble(textC);
+
+            if (a == 0) {
+                if (b == 0)
+                    textViewX1.setText("Нет корней");
+                else {
+                    x1 = -c / b;
+                    textViewX1.setText("x = " + x1);
+                }
+            }
+            else {
+                double discriminant = b * b - 4 * a * c;
+                if (discriminant > 0) {
+                    x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                    x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                    textViewX1.setText("x1 = " + x1);
+                    textViewX2.setText("x2 = " + x2);
+                } else if (discriminant == 0) {
+                    x1 = -b / (2 * a);
+                    textViewX1.setText("x = " + x1);
+                } else
+                    textViewX1.setText("Нет корней");
+            }
+        }
     }
 }
