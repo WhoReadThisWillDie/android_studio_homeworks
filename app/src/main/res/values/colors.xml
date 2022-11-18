@@ -7,6 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="dark_blue">#1D2A7C</color>
-    <color name="forest_green">#23551A</color>
+
+    <color name="main_background">#552880</color>
+    <color name="text_color">#000000</color>
+    <color name="still">#D4E1D6</color>
+    <color name="correct">#15F833</color>
+    <color name="wrong">#FF0000</color>
+    <color name="button_color_start">#7C1593</color>
+    <color name="button_color_end">#D60012</color>
 </resources>
