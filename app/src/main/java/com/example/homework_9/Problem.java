@@ -18,9 +18,16 @@ public class Problem {
     }
 
     public String getProblem() {
-        int a = getRandom(-100, 100);
-        int b = getRandom(0, 100);
         char sign = getRandomSign();
+        int a = getRandom(-100, 100);
+        int b;
+        if (sign == '/') {
+            b = getRandom(1, 15);
+            result = a / b;
+        }
+        else {
+            b = getRandom(0, 100);
+        }
         switch (sign) {
             case '+':
                 result = a + b;
@@ -30,9 +37,6 @@ public class Problem {
                 break;
             case '*':
                 result = a * b;
-                break;
-            case '/':
-                result = a / b;
                 break;
         }
         return a + " " + sign + " " + b;
