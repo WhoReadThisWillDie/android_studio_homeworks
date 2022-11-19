@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("ResourceAsColor")
     private void generateProblem() {
-        binding.solution1.setBackgroundColor(getColor(R.color.still));
-        binding.solution2.setBackgroundColor(getColor(R.color.still));
-        binding.solution3.setBackgroundColor(getColor(R.color.still));
         binding.problem.setText(problem.getProblem());
         int position = problem.getRandom(1, 4);
         switch (position) {
@@ -62,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.next:
+                    binding.solution1.setBackgroundColor(getColor(R.color.still));
+                    binding.solution2.setBackgroundColor(getColor(R.color.still));
+                    binding.solution3.setBackgroundColor(getColor(R.color.still));
                     generateProblem();
                     break;
                 case R.id.solution_1:
