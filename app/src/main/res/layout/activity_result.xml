@@ -4,44 +4,37 @@
     android:id="@+id/bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#826DFA"
+    android:background="#9366E8"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/input_email"
+    <TextView
+        android:id="@+id/hello"
         android:layout_width="wrap_content"
-        android:layout_height="60sp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:hint="email"
-        android:maxLength="30"
-        android:minWidth="200dp"
+        android:maxLines="1"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="25sp" />
+        android:textSize="35sp"
+        tools:text="Привет, Rick Astley" />
 
-    <EditText
-        android:id="@+id/input_password"
-        android:layout_width="wrap_content"
-        android:layout_height="60sp"
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:hint="password"
-        android:maxLength="30"
-        android:minWidth="200dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="25sp" />
+        android:layout_centerVertical="true"
+        tools:srcCompat="@color/purple_700" />
 
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/take_photo"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/button_style"
-        android:text="Зарегистрироваться"
+        android:text="Сделать фото"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
