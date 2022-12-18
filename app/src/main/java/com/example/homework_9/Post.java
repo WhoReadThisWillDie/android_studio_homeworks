@@ -7,15 +7,17 @@ public class Post {
     private int likes;
     private int comments;
     private int reposts;
+    private String[] someComments;
     private boolean liked = false;
 
-    public Post(String title, String text, int image, int likes, int comments, int reposts) {
+    public Post(String title, String text, int image, int likes, int comments, int reposts, String[] someComments) {
         this.title = title;
         this.text = text;
         this.image = image;
         this.likes = likes;
         this.comments = comments;
         this.reposts = reposts;
+        this.someComments = someComments;
     }
 
     public void setTitle(String title) {
@@ -54,6 +56,10 @@ public class Post {
         return text;
     }
 
+    public String[] getSomeComments() {
+        return someComments;
+    }
+
     public int getImage() {
         return image;
     }
@@ -72,5 +78,14 @@ public class Post {
 
     public boolean isLiked() {
         return liked;
+    }
+
+    public void like() {
+        if (isLiked()) {
+            likes--;
+        } else {
+            likes++;
+        }
+        liked = !liked;
     }
 }
