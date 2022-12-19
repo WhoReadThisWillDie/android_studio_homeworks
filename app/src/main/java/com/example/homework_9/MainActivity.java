@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.happy, 1000, 2, 74, new String[]{"Как же он хорош", "БАЗАБАЗАБАЗА"});
         posts[2] = new Post("Анонс GTA 6",
                 "Студия Rockstar объявила о старте разработки новой игры. Первый тизер выйдет в 2024 году",
-                R.drawable.gta, 1337, 5, 1000, new String[]{"СДЕЛАЙТЕ ВСЕ КАК В РЕАЛЬНОЙ ЖИЗНЕ", "физику поправьте", "добавьте собакумедведькошку и других зверей!!"});
+                R.drawable.gta, 1337, 3, 1000, new String[]{"СДЕЛАЙТЕ ВСЕ КАК В РЕАЛЬНОЙ ЖИЗНЕ", "физику поправьте", "добавьте собакумедведькошку и других зверей!!"});
 
     }
 
@@ -100,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
             CardView likeButton = convertView.findViewById(R.id.like_button);
             likeButton.setOnClickListener(view -> {
                 if (post.isLiked()) {
-                    likeImage.setImageResource(R.drawable.sad);
+                    likeImage.setImageResource(R.drawable.dislike);
                 } else {
-                    likeImage.setImageResource(R.drawable.happy);
+                    likeImage.setImageResource(R.drawable.like);
                 }
                 post.like();
                 notifyDataSetChanged();
